@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Roboto:900');
+
+:root{
+    --background: white;
+    --logo-color: black; 
+}
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    margin-top: 55px;
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+header{
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    background-color: var(--background);
+    padding: 1em;
+    top: 0;
+    box-shadow: 2px 0 10px #dbdbdb;
+}
+
+.logo{
+    display: inline-block;
+    
+}
+
+.logo h1{
+    display: inline-block;
+    position: absolute;
+    font-size: 20px;
+    font-style: normal;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--logo-color);
+    margin-left: 3em;
+    margin-top: -15px;
+}
+.logo img{
+    display: inline-block;
+    position: absolute;
+    width: 32px;
+    height: auto;
+    margin-top: -20px;
+    
+}
+
+.logo-anchor:hover div h1{
+    opacity: .5;
+}
+.logo-anchor:hover div img{
+    opacity: .5;
+}
+
+.navbar nav{
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background-color: var(--background);
+    width: 100%;
+    transform: scale(1,0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+}
+
+.navbar ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+}
+
+.navbar li{
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+.navbar nav a{
+    color: #a3a1a2;
+    text-decoration: none;
+    text-transform: uppercase;  
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+}
+
+.navbar nav a:hover{
+    color: black;
+}
+
+.navbar nav .active{
+    color: black;
+}
+
+.navbar .nav-toggle:checked ~ nav{
+    display: block;
+    transform: scale(1,1);
+}
+
+.navbar .nav-toggle:checked ~nav a{
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+}
+
+.navbar .nav-toggle{
+    display:none;
+}
+
+.navbar .nav-toggle-label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .nav-toggle-label span,
+.navbar .nav-toggle-label span::before,
+.navbar .nav-toggle-label span::after{
+    display: block;
+    background: var(--logo-color);
+    height: 3px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+}
+
+.navbar .nav-toggle-label span::before,
+.navbar .nav-toggle-label span::after{
+    content: '';
+    position: absolute;
+}
+
+.navbar .nav-toggle-label span::before{
+    bottom: 7px;
+}
+
+.navbar .nav-toggle-label span::after{
+    top: 7px;
+}
+
+main{
+    position: static;
+    
+}
+
+.clickable-image{
+    position: relative;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+    height: 50%;
+    margin: 0;
+    
+}
+.clickable-image img{
+    position: static;
+    object-fit:cover;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: opacity 150ms ease-in-out;
+    margin: 0;
+    z-index: -1;
+
+}
+.clickable-image h2{
+    position: absolute;
+    margin: 0;
+    opacity: 0;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    transition: opacity 150ms ease-in-out;
+    z-index: 2;
+    
+
+    
+}
+.clickable-image .square{
+    position: absolute;
+    margin: 0;
+    background-color: teal;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+}
+.clickable-image:after{
+    content: "";
+    position: absolute;
+    display: block;
+    background-color: red;
+}
+
+
+.clickable-image:hover h2{
+    opacity: 1;
+}
+
+.clickable-image:hover .square{
+    opacity: .5;
+}
+.row {  
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 0;
+}
+.column {
+    flex: 33.3%;
+    max-width: 33.3%;
+    padding: 0 0;
+}
+.project-title-card{
+    position: relative;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    vertical-align: baseline;
+    width: 100%;
+    height: 10%;
+    margin: 0;
+}
+.project-title-card h2{
+    top: 7em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 3vw;
+    margin: 0;
+    margin-bottom: 2em;
+    position: absolute;
+    z-index: 2;
+}
+.project-title-card img{
+    position: static;
+    object-fit:cover;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: opacity 150ms ease-in-out;
+    margin: 0;
+    z-index: -1;
+
+}
+
+.project-title-card p{
+    margin: 0;
+    top: 25em;
+    font-size: 1vw;
+    display: block;
+    position: absolute;
+    z-index: 2;
+}
+
+
+@media screen and (min-width:800px) {
+    .navbar .nav-toggle-label{
+        display: none;
+    }
+
+    .navbar{
+        display: grid;
+        grid-template-columns: 1fr auto minmax(600px, 5fr) 1fr;
+    }
+
+    .navbar .logo-anchor{
+        grid-column: 2 / 3;
+        text-align: center;
+        
+    }
+
+    .navbar nav{
+        all: unset;
+        grid-column: 3 / 4;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .navbar nav a{
+        opacity: 1;
+        position: relative;
+    }
+    .current-tab:before{
+        display: block;
+        position: absolute;
+        height: 5px;
+        background: var(--logo-color);
+        top: -.75em;
+        left: 0;
+        right: 0;
+    }
+    .navbar nav a:before{
+        content: "";
+        display: block;
+        position: absolute;
+        height: 5px;
+        background: var(--logo-color);
+        top: -.75em;
+        left: 0;
+        right: 0;
+        transform: scale(0,1);
+        transition: transform 100ms ease-in-out;
+    }
+
+    
+
+    .navbar nav a:hover::before{
+        transform: scale(1,1);
+        transition: transform 100ms ease-in-out;
+    }
+
+    .navbar nav .active:after{
+        content: "";
+        display: block;
+        position: absolute;
+        height: 5px;
+        background: var(--logo-color);
+        top: -.75em;
+        left: 0;
+        right: 0;
+    }
+
+    .navbar nav ul{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .navbar nav li{
+        margin-bottom: 0;
+        margin-left: 3em;
+    }
+}
+@media screen and (max-width: 800px) {
+    .column {
+      -ms-flex: 50%;
+      flex: 50%;
+      max-width: 50%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .column {
+      -ms-flex: 100%;
+      flex: 100%;
+      max-width: 100%;
+    }
+}
+
+
