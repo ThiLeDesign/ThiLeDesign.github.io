@@ -36,7 +36,7 @@ header{
 .logo h1{
     display: inline-block;
     position: absolute;
-    font-size: 1.5em;
+    font-size: 1em;
     font-style: normal;
     font-family: 'Montserrat', sans-serif;
     color: var(--logo-color);
